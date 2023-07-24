@@ -1,0 +1,19 @@
+{
+  "name": "ansi-colors",
+  "version": "1.0.0",
+  "description": "Simple JS module to extend String.prototype to add ANSI color support for terminal output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blister/ansi-colors.git"
+  },
+  "author": "Eric Ryan Harrison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blister/ansi-colors/issues"
+  },
+  "homepage": "https://github.com/blister/ansi-colors#readme"
+}
