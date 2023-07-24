@@ -67,7 +67,7 @@ const BG_COLORS = {
 		}
 
 		if ( colorCode ) {
-			return `\u001b[1;${BFG_COLORS[color]}m${this}`;
+			return `\u001b[1;${colorCode}m${this}`;
 		}
 
 		return this;
