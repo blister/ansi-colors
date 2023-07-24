@@ -21,17 +21,6 @@ const FG_COLORS = {
 	'reset': 0,
 };
 
-const BFG_COLORS = {
-	'black': 90,
-	'red': 91,
-	'green': 92,
-	'yellow': 93,
-	'blue': 94,
-	'magenta': 95,
-	'cyan': 96,
-	'white': 97,
-};
-
 const BG_COLORS = {
 	'black': 40,
 	'red': 41,
