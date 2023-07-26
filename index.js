@@ -8,6 +8,9 @@ Usage:
 		name.fg('green').bg('cyan').clearAll()
 	);
 */
+const tty = require('tty');
+const IS_TTY = tty.isatty(process.stdout.fd);
+
 const FG_COLORS = {
 	'black': 30,
 	'red': 31,
@@ -42,6 +45,7 @@ const BG_COLORS = {
 
 	// normal fg
 	String.prototype.fg = function(color, bright = false) {
+		if ( ! IS_TTY ) { return this.toString(); }
 		let colorCode = null;
 		if ( color in FG_COLORS ) {
 			colorCode = FG_COLORS[ color ];
@@ -58,8 +62,9 @@ const BG_COLORS = {
 
 	// background
 	String.prototype.bg = function(color,bright = false) {
+		if ( ! IS_TTY ) { return this.toString(); }
 		let colorCode = null;
-		if ( color in BFG_COLORS ) {
+		if ( color in BG_COLORS ) {
 			colorCode = BG_COLORS[ color ];
 		}
 		if ( bright ) {

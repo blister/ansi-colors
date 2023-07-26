@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/blister/ansi-colors/issues"
   },
-  "homepage": "https://github.com/blister/ansi-colors#readme"
+  "homepage": "https://github.com/blister/ansi-colors#readme",
+  "dependencies": {
+    "tty": "^1.0.1"
+  }
 }
