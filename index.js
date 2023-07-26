@@ -40,6 +40,7 @@ const BG_COLORS = {
 (function() {
 	String.prototype.clearAll = function() {
 		// \u001b[0m
+		if ( ! IS_TTY ) { return this.toString(); }
 		return `${this}\u001b[0m`;
 	};
 

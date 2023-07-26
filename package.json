@@ -1,6 +1,6 @@
 {
   "name": "ansi-colors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple JS module to extend String.prototype to add ANSI color support for terminal output.",
   "main": "index.js",
   "scripts": {
