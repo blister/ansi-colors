@@ -37,6 +37,9 @@ const BG_COLORS = {
 	'reset': 0,
 };
 
+const RFG_COLORS = ['31', '33', '32', '36', '34', '35'];
+const RBG_COLORS = ['41', '43', '42', '46', '44', '45'];
+
 (function() {
 	String.prototype.clearAll = function() {
 		// \u001b[0m
@@ -78,4 +81,48 @@ const BG_COLORS = {
 
 		return this;
 	};
+
+	// currently assuming no \ for escape chars
+    // rainbow fg text
+    String.prototype.rfg = function () {
+        let fgs = '';
+        let ic = 0;
+
+        for (let i = 0; i < this.length; i++) {
+            if (this[i] === ' ') {
+                fgs += ' ';
+            } else {
+                fgs += `\u001b[${RFG_COLORS[ic]}m${this[i]}`;
+                ic++;
+            }
+
+            if (ic === RFG_COLORS.length) {
+                ic = 0;
+            }
+        }
+
+        return `\u001b[0m${fgs}\u001b[0m`;
+    }
+
+    // currently assuming no \ for escape chars
+    // rainbow background
+    String.prototype.rbg = function () {
+        let bic = 0;
+        let bgs = '\u001b[30m';//start with text black
+
+        for (let i = 0; i < this.length; i++) {
+            if (this[i] === ' ') {
+                bgs += ' ';
+            } else {
+                bgs += `\u001b[${RBG_COLORS[bic]}m${this[i]}`;
+                bic++;
+            }
+
+            if (bic === RBG_COLORS.length) {
+                bic = 0;
+            }
+        }
+
+        return `\u001b[0m${bgs}\u001b[0m`;
+    };
 })();
